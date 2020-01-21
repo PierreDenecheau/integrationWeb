@@ -45,6 +45,7 @@ public class VilleDAOImpl implements VilleDAO {
 			
 			resultSet.close();
 			statement.close();
+			con.close();
 			    
 		} catch (SQLException e) {
 		    e.printStackTrace();
@@ -92,7 +93,7 @@ public class VilleDAOImpl implements VilleDAO {
     }
 	
 	@Override
-    public void saveVille(Ville ville) {
+    public void insertVille(Ville ville) {
 
 		try {
 			Connection con = JDBCConfigurationSol1.getConnection();
