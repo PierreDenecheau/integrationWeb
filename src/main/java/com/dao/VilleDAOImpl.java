@@ -45,7 +45,6 @@ public class VilleDAOImpl implements VilleDAO {
 			
 			resultSet.close();
 			statement.close();
-			con.close();
 			    
 		} catch (SQLException e) {
 		    e.printStackTrace();
