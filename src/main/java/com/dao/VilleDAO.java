@@ -8,4 +8,10 @@ public interface VilleDAO {
 	
 	public ArrayList<Ville> findVilles();
 
+	public ArrayList<Ville> findVilleByCodePostal(String codePostal);
+
+	public void saveVille(Ville ville);
+	
+	public void updateVille(String codePostal, Ville ville);
+	
 }

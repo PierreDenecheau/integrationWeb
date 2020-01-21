@@ -21,7 +21,7 @@ public class VilleBLOImpl implements VilleBLO {
         if (codePostal == null || "".equalsIgnoreCase(codePostal)) {
 			listVille = villeDAO.findVilles();
 		} else {
-			listVille = null;
+			listVille = villeDAO.findVilleByCodePostal(codePostal);
 		}
         
         System.out.println("Nombre de ville récupérée(s) : " + listVille.size() );
@@ -29,4 +29,19 @@ public class VilleBLOImpl implements VilleBLO {
 		return listVille;
 	}
 
+	@Override
+	public void insertVille(Ville ville) throws VilleException {
+
+		if (!"".equalsIgnoreCase(ville.getCodePostal())) {
+			villeDAO.saveVille(ville);
+		} 
+	}
+	
+	@Override
+	public void updateVille(String codePostal, Ville ville) throws VilleException {
+
+		if (!"".equalsIgnoreCase(ville.getCodePostal())) {
+			villeDAO.updateVille(codePostal, ville);
+		} 	
+	}
 }
