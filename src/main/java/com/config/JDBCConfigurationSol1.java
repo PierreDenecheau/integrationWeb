@@ -46,7 +46,7 @@ public class JDBCConfigurationSol1 {
         try {
         	connection = mysqlDS.getConnection();
 		} catch (SQLException e) {
-			System.out.println("Erreur pendant la creation de la connexion à la BDD.");
+			System.out.println("Erreur lors de la connexion à la BDD.");
 			e.printStackTrace();
 		}
 		return connection;
