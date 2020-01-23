@@ -27,7 +27,6 @@ class VilleController {
 	@RequestMapping(value="/ville", method=RequestMethod.GET)
 	@ResponseBody
 	public ArrayList<Ville> recover(@RequestParam(required = false, value="codePostal") String codePostal) {
-		System.out.println("Appel GET");
 
 		ArrayList<Ville> listVille =  villeService.getInfoVilles(codePostal);
 		return listVille;
@@ -37,7 +36,6 @@ class VilleController {
 	@RequestMapping(value="/ville", method=RequestMethod.POST)
 	@ResponseBody
 	public String insert(@RequestBody Ville ville) {
-		System.out.println("Appel POST");
 		System.out.println("ville Post : " + ville.toString());
 		ObjectMapper mapper = new ObjectMapper();
 		try {
@@ -54,7 +52,6 @@ class VilleController {
 	
 	// Methode PUT
 	public String update(@PathVariable String codePostal, @RequestBody Ville ville) {
-		System.out.println("Appel PUT");
 
 	    System.out.println(codePostal);
 	    System.out.println(ville.getCodePostal());
